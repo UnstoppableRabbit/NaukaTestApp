@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="naukaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductNumber" />
+    </Key>
+    <Property Name="ProductNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ReceiptOrder_Product" Relationship="Self.FK__ReceiptOr__Produ__31EC6D26" FromRole="Product" ToRole="ReceiptOrder_Product" />
+  </EntityType>
+  <EntityType Name="Provider">
+    <Key>
+      <PropertyRef Name="ProviderID" />
+    </Key>
+    <Property Name="ProviderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ReceiptOrder" Relationship="Self.FK__ReceiptOr__Provi__29572725" FromRole="Provider" ToRole="ReceiptOrder" />
+  </EntityType>
+  <EntityType Name="ReceiptOrder">
+    <Key>
+      <PropertyRef Name="OrderNum" />
+    </Key>
+    <Property Name="OrderNum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeliveryContract" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" Nullable="false" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Provider" Relationship="Self.FK__ReceiptOr__Provi__29572725" FromRole="ReceiptOrder" ToRole="Provider" />
+    <NavigationProperty Name="ReceiptOrder_Product" Relationship="Self.FK__ReceiptOr__Order__300424B4" FromRole="ReceiptOrder" ToRole="ReceiptOrder_Product" />
+  </EntityType>
+  <EntityType Name="ReceiptOrder_Product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNum" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="WarehouseID" Type="Int32" Nullable="false" />
+    <Property Name="ProductNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__ReceiptOr__Produ__31EC6D26" FromRole="ReceiptOrder_Product" ToRole="Product" />
+    <NavigationProperty Name="ReceiptOrder" Relationship="Self.FK__ReceiptOr__Order__300424B4" FromRole="ReceiptOrder_Product" ToRole="ReceiptOrder" />
+    <NavigationProperty Name="Warehouse" Relationship="Self.FK__ReceiptOr__Wareh__30F848ED" FromRole="ReceiptOrder_Product" ToRole="Warehouse" />
+  </EntityType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="WarehouseID" />
+    </Key>
+    <Property Name="WarehouseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ReceiptOrder_Product" Relationship="Self.FK__ReceiptOr__Wareh__30F848ED" FromRole="Warehouse" ToRole="ReceiptOrder_Product" />
+  </EntityType>
+  <Association Name="FK__ReceiptOr__Produ__31EC6D26">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ReceiptOrder_Product" Type="Self.ReceiptOrder_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductNumber" />
+      </Principal>
+      <Dependent Role="ReceiptOrder_Product">
+        <PropertyRef Name="ProductNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReceiptOr__Provi__29572725">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="1" />
+    <End Role="ReceiptOrder" Type="Self.ReceiptOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderID" />
+      </Principal>
+      <Dependent Role="ReceiptOrder">
+        <PropertyRef Name="ProviderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReceiptOr__Order__300424B4">
+    <End Role="ReceiptOrder" Type="Self.ReceiptOrder" Multiplicity="1" />
+    <End Role="ReceiptOrder_Product" Type="Self.ReceiptOrder_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReceiptOrder">
+        <PropertyRef Name="OrderNum" />
+      </Principal>
+      <Dependent Role="ReceiptOrder_Product">
+        <PropertyRef Name="OrderNum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReceiptOr__Wareh__30F848ED">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="ReceiptOrder_Product" Type="Self.ReceiptOrder_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouse">
+        <PropertyRef Name="WarehouseID" />
+      </Principal>
+      <Dependent Role="ReceiptOrder_Product">
+        <PropertyRef Name="WarehouseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="naukaEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="Provider" EntityType="Self.Provider" />
+    <EntitySet Name="ReceiptOrder" EntityType="Self.ReceiptOrder" />
+    <EntitySet Name="ReceiptOrder_Product" EntityType="Self.ReceiptOrder_Product" />
+    <EntitySet Name="Warehouse" EntityType="Self.Warehouse" />
+    <AssociationSet Name="FK__ReceiptOr__Produ__31EC6D26" Association="Self.FK__ReceiptOr__Produ__31EC6D26">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ReceiptOrder_Product" EntitySet="ReceiptOrder_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReceiptOr__Provi__29572725" Association="Self.FK__ReceiptOr__Provi__29572725">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="ReceiptOrder" EntitySet="ReceiptOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReceiptOr__Order__300424B4" Association="Self.FK__ReceiptOr__Order__300424B4">
+      <End Role="ReceiptOrder" EntitySet="ReceiptOrder" />
+      <End Role="ReceiptOrder_Product" EntitySet="ReceiptOrder_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReceiptOr__Wareh__30F848ED" Association="Self.FK__ReceiptOr__Wareh__30F848ED">
+      <End Role="Warehouse" EntitySet="Warehouse" />
+      <End Role="ReceiptOrder_Product" EntitySet="ReceiptOrder_Product" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

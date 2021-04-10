@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaukaApp", "NaukaApp\NaukaApp.csproj", "{08A1B3E1-6CBB-4E63-8E4B-E6781DC0FA8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08A1B3E1-6CBB-4E63-8E4B-E6781DC0FA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08A1B3E1-6CBB-4E63-8E4B-E6781DC0FA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08A1B3E1-6CBB-4E63-8E4B-E6781DC0FA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08A1B3E1-6CBB-4E63-8E4B-E6781DC0FA8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABBA6376-4D2C-4700-A06A-9BF2E57B93A1}
+	EndGlobalSection
+EndGlobal

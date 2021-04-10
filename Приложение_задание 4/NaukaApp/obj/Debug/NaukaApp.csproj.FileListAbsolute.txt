@@ -1,0 +1,29 @@
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\bin\Debug\NaukaApp.exe.config
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\bin\Debug\NaukaApp.exe
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\bin\Debug\NaukaApp.pdb
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\bin\Debug\EntityFramework.dll
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\bin\Debug\EntityFramework.xml
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\NaukaApp.csprojAssemblyReference.cache
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\MainWindow.g.cs
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\App.g.cs
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\NaukaApp_Content.g.cs
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\NaukaApp_MarkupCompile.cache
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\NaukaApp_MarkupCompile.lref
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\MainWindow.baml
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\NaukaApp.g.resources
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\NaukaApp.Properties.Resources.resources
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\NaukaApp.csproj.GenerateResource.cache
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\NaukaApp.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\NaukaApp.csproj.CopyComplete
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\NaukaApp.exe
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\NaukaApp.pdb
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\Secondary Windows\ProductWindow.g.cs
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\Secondary Windows\ProductWindow.baml
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\Secondary Windows\ProviderWindow.g.cs
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\Secondary Windows\ProviderWindow.baml
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\Secondary Windows\WarehouseWindow.g.cs
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\Secondary Windows\WarehouseWindow.baml
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\Secondary Windows\OrderWindow.g.cs
+C:\Users\ASUS\source\repos\NaukaApp\NaukaApp\obj\Debug\Secondary Windows\OrderWindow.baml

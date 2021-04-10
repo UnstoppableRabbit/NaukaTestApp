@@ -1,0 +1,31 @@
+﻿<Window x:Class="NaukaApp.Secondary_Windows.ProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NaukaApp.Secondary_Windows"
+        mc:Ignorable="d"
+        Title="Продукты" Height="450" Width="800">
+    <Grid Background="Lavender">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid IsReadOnly="False" x:Name="ProductGrid" HorizontalGridLinesBrush="DarkGray"
+                RowBackground="Lavender" AlternatingRowBackground="White" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="Номер товара" Binding="{Binding ProductNumber}">
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}">
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}">
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Cost}">
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="RefreshButton"  Grid.Row="1" Width="170" HorizontalAlignment="Left" FontSize="15" Click="RefreshButton_Click">Обновить</Button>
+        <Button x:Name="CloseButton" Grid.Row="1" Width="170" HorizontalAlignment="Right" FontSize="15" Click="CloseButton_Click">Закрыть окно</Button>
+        <Button x:Name="ButtonRemove" Grid.Row="1" Width="170" HorizontalAlignment="Center" FontSize="12" Click="ButtonRemove_Click">Удалить выбранный элемент</Button>
+    </Grid>
+</Window>
